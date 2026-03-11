@@ -70,12 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // --- 🌍 PLANET ROTATION LOGIC ---
         // Calculate scroll percentage relative to the whole document
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
         const scrollPercent = (scrolled / maxScroll); // 0 to 1
         
         // Map 0 -> 1 scroll to 0px -> 1000px background position shift
         // This gives the illusion of planet rotation
         document.documentElement.style.setProperty('--scroll-rotation', `-${scrollPercent * 1500}px`);
+
+        // --- 🚀 ROCKET PROGRESS ---
+        const rocket = document.getElementById('scroll-rocket');
+        if (rocket) {
+            // Cap to 100% max
+            const p = Math.min(Math.max(scrollPercent, 0), 1);
+            rocket.style.top = `${p * 100}%`;
+        }
     });
 
     // =========================================

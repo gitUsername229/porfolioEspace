@@ -106,6 +106,32 @@ body {
     overflow: hidden;
 }
 
+/* Effet de Scintillement (Shimmer) */
+.hologram-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 229, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    animation: shimmer 8s infinite linear;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% { left: -150%; }
+    15% { left: 200%; }
+    100% { left: 200%; }
+}
+
 .intro-glass-panel {
     background: rgba(10, 20, 40, 0.6);
     backdrop-filter: blur(20px);
@@ -130,7 +156,7 @@ body {
 
 /* Avatar Sci-Fi */
 .hero-avatar { position: relative; width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;}
-.hero-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 2; border: 2px solid var(--primary); filter: grayscale(30%) contrast(120%) sepia(20%) hue-rotate(180deg); }
+.hero-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 2; border: 2px solid var(--primary); }
 .avatar-ring-outer { position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px); border-radius: 50%; border: 1px dashed rgba(0, 229, 255, 0.4); animation: spin 20s linear infinite; z-index: 1;}
 .avatar-ring-inner { position: absolute; top: -5px; left: -5px; width: calc(100% + 10px); height: calc(100% + 10px); border-radius: 50%; border: 2px solid rgba(0, 229, 255, 0.1); border-top-color: var(--primary); border-bottom-color: var(--primary); animation: spinReverse 10s linear infinite; z-index: 1;}
 
@@ -177,7 +203,7 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #ffffff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px var(--primary-dim);
+    background: linear-gradient(135deg, #ffffff, var(--primary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px var(--primary-dim);
 }
 .tech-tag { font-family: var(--mono-font); color: var(--primary); margin-bottom: 1.5rem; font-size: 1rem; letter-spacing: 5px; text-shadow: 0 0 10px var(--primary-dim); }
 
@@ -186,6 +212,18 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 }
 .cta-button:hover, .glow-btn:hover { background: var(--primary); color: var(--bg-dark); box-shadow: 0 0 30px var(--primary); }
 .glow-btn { box-shadow: 0 0 15px var(--primary-dim); }
+
+.cv-btn {
+    border-color: var(--secondary);
+    color: var(--text-white);
+    background: rgba(41, 121, 255, 0.1);
+}
+.cv-btn:hover {
+    background: var(--secondary);
+    color: var(--text-white);
+    box-shadow: 0 0 30px var(--secondary);
+    border-color: var(--secondary);
+}
 
 /* Navigation */
 nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition); }
@@ -415,9 +453,18 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .skill-category h3 { color: var(--text-white); margin-bottom: 1.25rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; }
 .skill-category h3 i { color: var(--primary); }
 .skill-list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-.skill-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); transition: 0.3s; }
+.skill-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); transition: 0.3s; position: relative; z-index: 1; overflow: hidden; }
 .skill-item i { color: var(--text-white); }
-.skill-item:hover { border-color: var(--primary); color: var(--primary); box-shadow: 0 0 15px var(--primary-dim); }
+.skill-item:hover { border-color: var(--primary); color: var(--text-white); box-shadow: 0 0 15px var(--primary-dim); background: rgba(0, 229, 255, 0.1); animation: orbit-glow 2s linear infinite; transform: translateY(-2px); }
+.skill-item:hover i { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+
+@keyframes orbit-glow {
+    0% { box-shadow: 0 -3px 10px rgba(0, 229, 255, 0.4), 0 3px 10px rgba(41, 121, 255, 0.1); }
+    25% { box-shadow: 3px 0 10px rgba(0, 229, 255, 0.4), -3px 0 10px rgba(41, 121, 255, 0.1); }
+    50% { box-shadow: 0 3px 10px rgba(0, 229, 255, 0.4), 0 -3px 10px rgba(41, 121, 255, 0.1); }
+    75% { box-shadow: -3px 0 10px rgba(0, 229, 255, 0.4), 3px 0 10px rgba(41, 121, 255, 0.1); }
+    100% { box-shadow: 0 -3px 10px rgba(0, 229, 255, 0.4), 0 3px 10px rgba(41, 121, 255, 0.1); }
+}
 
 /* Modal */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 3000; justify-content: center; align-items: center; padding: 2rem; }
@@ -445,8 +492,34 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .modal-features-list li { display: flex; gap: 0.75rem; align-items: start; }
 .modal-features-list li i { color: var(--primary); margin-top: 0.2rem; }
 
+/* Rocket Scroll Progress Indicator */
+#scroll-progress-track {
+    position: fixed;
+    right: 30px;
+    top: 0;
+    width: 2px;
+    height: 100vh;
+    background: rgba(0, 229, 255, 0.1);
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+}
+
+#scroll-rocket {
+    position: absolute;
+    top: 0;
+    color: var(--primary);
+    filter: drop-shadow(0 0 10px var(--primary));
+    transform: translateY(-50%) rotate(180deg); /* point downwards */
+    width: 24px;
+    height: 24px;
+    transition: top 0.1s ease-out;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 900px) {
+    #scroll-progress-track { display: none; }
     .section-inner { flex-direction: column !important; text-align: center; }
     .parcours-grid { grid-template-columns: 1fr; }
     .enhanced-layout { grid-template-columns: 1fr; }

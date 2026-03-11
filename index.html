@@ -4,11 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio professionnel - Mes projets, mon parcours et mes compétences.">
+    <meta name="description" content="Portfolio d'Abdelkader Kouidri, Développeur Full-Stack. Explorez mes projets, mon parcours et mes compétences à travers un univers interactif.">
+    <meta name="author" content="Abdelkader Kouidri">
+    
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kouidri.dev/">
+    <meta property="og:title" content="Abdelkader Kouidri | Développeur Full-Stack">
+    <meta property="og:description" content="Découvrez mon portfolio interactif : projets, compétences et parcours.">
+    <meta property="og:image" content="https://kouidri.dev/pdp.png">
+
+
     <title>Abdelkader Kouidri | Univers Spectaculaire</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -29,6 +37,11 @@
 
     <!-- Mouse Glow -->
     <div id="mouse-glow"></div>
+
+    <!-- Scroll Progress Rocket -->
+    <div id="scroll-progress-track">
+        <i data-lucide="rocket" id="scroll-rocket"></i>
+    </div>
 
     <nav id="navbar">
         <div class="container nav-content">
@@ -59,7 +72,7 @@
                         <div class="hero-avatar">
                             <div class="avatar-ring-outer"></div>
                             <div class="avatar-ring-inner"></div>
-                            <img src="https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=400&auto=format&fit=crop" alt="Avatar">
+                            <img src="pdp.png" alt="Abdelkader Kouidri Avatar">
                         </div>
                         <div class="about-text" style="flex: 1; min-width: 300px;">
                             <h3><i class="fas fa-user-astronaut"></i> À Propos de moi</h3>
@@ -69,8 +82,9 @@
                     </div>
                 </div>
 
-                <div class="hero-actions">
+                <div class="hero-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="#projects" class="cta-button">[ EXPLORER MON UNIVERS ]</a>
+                    <a href="CV.pdf" target="_blank" class="cta-button cv-btn"><i class="fas fa-file-download" style="margin-right: 8px;"></i>[ TÉLÉCHARGER CV ]</a>
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -104,7 +118,7 @@
                                             <span class="tag"><i class="fas fa-brain"></i> AI/ONNX</span>
                                             <span class="tag"><i class="far fa-file-pdf"></i> PDF.js</span>
                                         </div>
-                                        <button class="view-more-btn" data-project="psup">[ DÉTAILS ]</button>
+                                        <button class="view-more-btn" data-project="psup" aria-label="Voir les détails du projet EnseignantSup">[ DÉTAILS ]</button>
                                     </div>
                                 </div>
                                 <!-- Festival de Cannes -->
@@ -120,7 +134,7 @@
                                             <span class="tag"><i class="fas fa-database"></i> MySQL</span>
                                             <span class="tag"><i class="fab fa-sass"></i> SCSS</span>
                                         </div>
-                                        <button class="view-more-btn" data-project="cannes">[ DÉTAILS ]</button>
+                                        <button class="view-more-btn" data-project="cannes" aria-label="Voir les détails du projet Festival de Cannes">[ DÉTAILS ]</button>
                                     </div>
                                 </div>
                                 <!-- EDT Manager -->
@@ -136,19 +150,19 @@
                                             <span class="tag"><i class="fas fa-server"></i> Express</span>
                                             <span class="tag"><i class="blue-text fab fa-js-square"></i> TypeScript</span>
                                         </div>
-                                        <button class="view-more-btn" data-project="edt">[ DÉTAILS ]</button>
+                                        <button class="view-more-btn" data-project="edt" aria-label="Voir les détails du projet EDT Manager">[ DÉTAILS ]</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-controls">
-                            <button class="carousel-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-arrow prev-btn" aria-label="Projet précédent"><i class="fas fa-chevron-left"></i></button>
                             <div class="carousel-dots">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
+                                <span class="dot active" aria-label="Accéder au projet 1"></span>
+                                <span class="dot" aria-label="Accéder au projet 2"></span>
+                                <span class="dot" aria-label="Accéder au projet 3"></span>
                             </div>
-                            <button class="carousel-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <button class="carousel-arrow next-btn" aria-label="Projet suivant"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -212,12 +226,12 @@
                             </div>
                         </div>
                         <div class="carousel-controls">
-                            <button class="carousel-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-arrow prev-btn" aria-label="Étape précédente du parcours"><i class="fas fa-chevron-left"></i></button>
                             <div class="carousel-dots">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
+                                <span class="dot active" aria-label="Accéder au parcours 1"></span>
+                                <span class="dot" aria-label="Accéder au parcours 2"></span>
                             </div>
-                            <button class="carousel-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <button class="carousel-arrow next-btn" aria-label="Étape suivante du parcours"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -332,12 +346,14 @@
                     </div>
                     <div style="text-align: center; max-width: 600px; margin: 0 auto; padding: 1rem 0;">
                         <p style="margin-bottom: 2.5rem; color: var(--text-gray); font-size: 1.1rem; line-height: 1.6;">Vous avez atterri à bon port. Vous avez un projet en tête ou vous souhaitez simplement échanger ? Les canaux de communication sont ouverts !</p>
-                        <a href="mailto:contact@kouidri.dev" class="cta-button glow-btn">[ ENVOYER UN MESSAGE ]</a>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a href="mailto:contact@kouidri.dev" class="cta-button glow-btn">[ ENVOYER UN MESSAGE ]</a>
+                            <a href="CV.pdf" target="_blank" class="cta-button cv-btn"><i class="fas fa-file-download" style="margin-right: 8px;"></i>[ TÉLÉCHARGER CV ]</a>
+                        </div>
                         
                         <div class="social-links" style="margin-top: 3rem;">
-                            <a href="#"><i data-lucide="github"></i></a>
-                            <a href="#"><i data-lucide="linkedin"></i></a>
-                            <a href="#"><i data-lucide="twitter"></i></a>
+                            <a href="https://github.com/gitUsername229" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+                            <a href="https://www.linkedin.com/in/abdelkader-k-15a562331/" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -354,9 +370,9 @@
     </main>
 
     <!-- Project Details Modal (Holographic UI) -->
-    <div id="project-modal" class="modal">
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content hologram-panel" style="border-color: var(--primary); box-shadow: 0 0 40px var(--primary-dim);">
-            <span class="close-modal"><i class="fas fa-times"></i></span>
+            <button class="close-modal" aria-label="Fermer la modale" style="background: none; border: none; outline: none; padding: 0;"><i class="fas fa-times"></i></button>
             <div id="modal-body-content"></div>
         </div>
     </div>
