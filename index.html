@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio professionnel - Mes projets, mon parcours et mes compétences.">
+    <title>Abdelkader Kouidri | Univers Spectaculaire</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Parallax Background Layers (Deep Space) -->
+    <div id="space-bg">
+        <div class="stars layer-1"></div>
+        <div class="stars layer-2"></div>
+        <div class="stars layer-3"></div>
+        <div class="nebula-bg"></div>
+    </div>
+
+    <!-- Mouse Glow -->
+    <div id="mouse-glow"></div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">KOUIDRI<span class="gradient-text">.DEV</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-item">Introduction</a></li>
+                <li><a href="#projects" class="nav-item">Projets</a></li>
+                <li><a href="#experience" class="nav-item">Parcours</a></li>
+                <li><a href="#hard-skills" class="nav-item">Hard Skills</a></li>
+                <li><a href="#soft-skills" class="nav-item">Soft Skills</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="journey-container">
+        <!-- Spectacular Hero / About Section -->
+        <section class="hero scroll-reveal" id="about">
+            <div class="container hero-content">
+                <p class="tech-tag">// DÉVELOPPEUR FULL-STACK</p>
+                <h1 class="neon-title">
+                    <span class="neon-text">ABDELKADER</span><br>
+                    <span class="neon-text outline">KOUIDRI</span>
+                </h1>
+                
+                <div class="intro-glass-panel scroll-reveal">
+                    <div class="about-content" style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+                        <div class="hero-avatar">
+                            <div class="avatar-ring-outer"></div>
+                            <div class="avatar-ring-inner"></div>
+                            <img src="https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=400&auto=format&fit=crop" alt="Avatar">
+                        </div>
+                        <div class="about-text" style="flex: 1; min-width: 300px;">
+                            <h3><i class="fas fa-user-astronaut"></i> À Propos de moi</h3>
+                            <p>Actuellement étudiant en info à l’IUT Lyon 1, ce qui me fait vibrer, c’est de mettre les mains dans le cambouis pour créer des outils qui servent vraiment.</p>
+                            <p>Plutôt que de rester en surface, j’aime comprendre comment tout s’articule, du bouton sur lequel on clique jusqu'à la base de données. Que ce soit pour du web ou du logiciel, mon truc, c’est de lier chaque brique pour que le projet tienne la route. Je fonctionne beaucoup à l'expérimentation : je teste, je plante souvent, mais c'est comme ça que j'apprends le mieux. Au-delà des lignes de code, j'aime simplement relever des défis et voir mes idées prendre vie.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="cta-button">[ EXPLORER MON UNIVERS ]</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <p>Plongez</p>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Mars: Projects Section -->
+        <section id="projects" class="planet-section layout-planet-left scroll-reveal">
+            <div class="container section-inner">
+                <div class="content-container hologram-panel">
+                    <div class="dashboard-header">
+                        <h2><i class="fas fa-satellite"></i> Mes Projets</h2>
+                        <span class="planet-label">Orbite : MARS</span>
+                    </div>
+                    <div class="projects-carousel-container">
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <!-- EnseignantSup -->
+                                <div class="project-slide">
+                                    <div class="project-card inner-panel">
+                                        <div class="project-img">
+                                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="EvaluationDossiersPSUP">
+                                        </div>
+                                        <h3><i data-lucide="file-search"></i> EnseignantSup</h3>
+                                        <p>Outil d'aide à la sélection permettant de faciliter le scoring et le classement des dossiers de candidatures.</p>
+                                        <div class="project-tags">
+                                            <span class="tag"><i class="fab fa-js"></i> Electron</span>
+                                            <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
+                                            <span class="tag"><i class="fas fa-brain"></i> AI/ONNX</span>
+                                            <span class="tag"><i class="far fa-file-pdf"></i> PDF.js</span>
+                                        </div>
+                                        <button class="view-more-btn" data-project="psup">[ DÉTAILS ]</button>
+                                    </div>
+                                </div>
+                                <!-- Festival de Cannes -->
+                                <div class="project-slide">
+                                    <div class="project-card inner-panel">
+                                        <div class="project-img">
+                                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1000&auto=format&fit=crop" alt="Festival de Cannes">
+                                        </div>
+                                        <h3><i data-lucide="clapperboard"></i> Festival de Cannes</h3>
+                                        <p>Plateforme de gestion événementielle permettant de piloter la billetterie, la logistique des invités et les accès VIP.</p>
+                                        <div class="project-tags">
+                                            <span class="tag"><i class="fab fa-symfony"></i> Symfony</span>
+                                            <span class="tag"><i class="fas fa-database"></i> MySQL</span>
+                                            <span class="tag"><i class="fab fa-sass"></i> SCSS</span>
+                                        </div>
+                                        <button class="view-more-btn" data-project="cannes">[ DÉTAILS ]</button>
+                                    </div>
+                                </div>
+                                <!-- EDT Manager -->
+                                <div class="project-slide">
+                                    <div class="project-card inner-panel">
+                                        <div class="project-img">
+                                            <img src="https://images.unsplash.com/photo-1506784919141-935967000e30?q=80&w=1000&auto=format&fit=crop" alt="EDT Manager">
+                                        </div>
+                                        <h3><i data-lucide="calendar"></i> EDT Manager</h3>
+                                        <p>Application de gestion d'emplois du temps permettant de consulter et d'administrer les plannings de manière interactive.</p>
+                                        <div class="project-tags">
+                                            <span class="tag"><i class="fab fa-vuejs"></i> Vue.js</span>
+                                            <span class="tag"><i class="fas fa-server"></i> Express</span>
+                                            <span class="tag"><i class="blue-text fab fa-js-square"></i> TypeScript</span>
+                                        </div>
+                                        <button class="view-more-btn" data-project="edt">[ DÉTAILS ]</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="carousel-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- VRAIE PLANÈTE MARS -->
+                <div class="planet-container">
+                    <div class="planet planet-mars">
+                        <div class="planet-shadow"></div>
+                        <div class="planet-atmosphere mars-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jupiter: Experience Section -->
+        <section id="experience" class="planet-section layout-planet-right scroll-reveal">
+            <div class="container section-inner">
+                <div class="content-container hologram-panel">
+                    <div class="dashboard-header">
+                        <h2><i class="fas fa-route"></i> Mon Parcours</h2>
+                        <span class="planet-label">Orbite : JUPITER</span>
+                    </div>
+                    <div class="projects-carousel-container" id="parcours-carousel">
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <!-- Parcours Scolaire -->
+                                <div class="project-slide">
+                                    <div class="parcours-column inner-panel" style="height: 100%;">
+                                        <h3><i class="fas fa-graduation-cap"></i> Parcours Scolaire</h3>
+                                        <div class="timeline-branch">
+                                            <div class="parcours-item">
+                                                <span class="parcours-date">Septembre 2022 - aujourd'hui</span>
+                                                <h4>Bachelor Universitaire technologique en développement Informatique</h4>
+                                                <p>à l' IUT Lyon 1, Bourg en Bresse</p>
+                                            </div>
+                                            <div class="parcours-item">
+                                                <span class="parcours-date">Juillet 2022</span>
+                                                <h4>Baccalauréat général Mathématiques et Numérique Science Informatique</h4>
+                                                <p>au lycée Carriat, Bourg en Bresse</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Parcours Professionnel -->
+                                <div class="project-slide">
+                                    <div class="parcours-column inner-panel" style="height: 100%;">
+                                        <h3><i class="fas fa-briefcase"></i> Parcours Professionnel</h3>
+                                        <div class="timeline-branch">
+                                            <div class="parcours-item">
+                                                <span class="parcours-date">Août 2025</span>
+                                                <h4><span class="badget">CDD</span> en tant que <span class="highlight">Développeur Full-Stack (SisID)</span></h4>
+                                                <p>Contribution aux différentes tâches techniques, intégration d'interfaces en Angular et résolution de tickets pour l'optimisation des outils internes.</p>
+                                            </div>
+                                            <div class="parcours-item">
+                                                <span class="parcours-date">Avril - Juin 2025</span>
+                                                <h4><span class="badget">Stage</span> en tant que <span class="highlight">Développeur Front-End (SisID)</span></h4>
+                                                <p>Conception et implémentation d'un nouveau parcours d'inscription en Angular (10 semaines).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-arrow prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <button class="carousel-arrow next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- VRAIE PLANÈTE JUPITER -->
+                <div class="planet-container pos-bottom gas-giant-container">
+                    <div class="planet planet-jupiter">
+                        <div class="planet-shadow"></div>
+                        <div class="planet-atmosphere jupiter-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Saturn: Hard Skills Section -->
+        <section id="hard-skills" class="planet-section layout-planet-left scroll-reveal">
+            <div class="container section-inner">
+                <div class="content-container hologram-panel">
+                    <div class="dashboard-header">
+                        <h2><i class="fas fa-microchip"></i> Hard Skills</h2>
+                        <span class="planet-label">Orbite : SATURNE</span>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-category inner-panel">
+                            <h3><i class="fas fa-layer-group"></i> Frontend</h3>
+                            <div class="skill-list">
+                                <span class="skill-item"><i class="fab fa-vuejs"></i> Vue.js 3</span>
+                                <span class="skill-item"><i class="fab fa-angular"></i> Angular</span>
+                                <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
+                                <span class="skill-item"><i class="fab fa-sass"></i> SCSS / CSS3</span>
+                                <span class="skill-item"><i class="fab fa-css3-alt"></i> Tailwind CSS</span>
+                            </div>
+                        </div>
+                        <div class="skill-category inner-panel">
+                            <h3><i class="fas fa-server"></i> Backend</h3>
+                            <div class="skill-list">
+                                <span class="skill-item"><i class="fab fa-symfony"></i> Symfony 7</span>
+                                <span class="skill-item"><i class="fab fa-node-js"></i> Node / Express</span>
+                                <span class="skill-item"><i class="fab fa-python"></i> Python</span>
+                                <span class="skill-item"><i class="fas fa-code"></i> C++ / PHP</span>
+                                <span class="skill-item"><i class="fas fa-database"></i> MongoDB / SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- VRAIE PLANÈTE SATURNE (avec anneaux) -->
+                <div class="planet-container">
+                    <div class="planet planet-saturn">
+                        <div class="saturn-rings"></div>
+                        <div class="planet-shadow"></div>
+                        <div class="planet-atmosphere saturn-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neptune: Soft Skills & Tools Section -->
+        <section id="soft-skills" class="planet-section layout-planet-right scroll-reveal">
+            <div class="container section-inner">
+                <div class="content-container hologram-panel">
+                    <div class="dashboard-header">
+                        <h2><i class="fas fa-wind"></i> Méthodologie & Outils</h2>
+                        <span class="planet-label">Orbite : NEPTUNE</span>
+                    </div>
+                    <div class="skills-container">
+                        <div class="skill-category inner-panel">
+                            <h3><i class="fas fa-tools"></i> Outils & Architecture</h3>
+                            <div class="skill-list">
+                                <span class="skill-item"><i class="fab fa-js"></i> Electron</span>
+                                <span class="skill-item"><i class="fas fa-microchip"></i> ONNX Runtime</span>
+                                <span class="skill-item"><i class="fab fa-docker"></i> Docker</span>
+                                <span class="skill-item"><i class="fab fa-git-alt"></i> Git / GitHub</span>
+                                <span class="skill-item"><i class="fas fa-key"></i> JWT / Security</span>
+                            </div>
+                        </div>
+                        <div class="skill-category inner-panel">
+                            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+                            <div class="skill-list">
+                                <span class="skill-item"><i class="fas fa-search"></i> Curiosité & Expérimentation</span>
+                                <span class="skill-item"><i class="fas fa-puzzle-piece"></i> Résolution de Problèmes</span>
+                                <span class="skill-item"><i class="fas fa-users"></i> Esprit d'Équipe</span>
+                                <span class="skill-item"><i class="fas fa-battery-full"></i> Persévérance</span>
+                                <span class="skill-item"><i class="fas fa-glasses"></i> Vision Globale (Full-Stack)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- VRAIE PLANÈTE NEPTUNE -->
+                <div class="planet-container">
+                    <div class="planet planet-neptune">
+                        <div class="planet-shadow"></div>
+                        <div class="planet-atmosphere neptune-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Earth: Contact Section (Center) -->
+        <section id="contact" class="planet-section layout-center scroll-reveal">
+            <!-- VRAIE TERRE (Vue de Nuit) -->
+            <div class="earth-container">
+                <div class="planet planet-earth">
+                    <div class="planet-shadow-earth"></div>
+                    <div class="planet-atmosphere earth-glow"></div>
+                </div>
+            </div>
+            
+            <div class="container section-inner" style="position: relative; z-index: 10; margin-top: -80px;">
+                <div class="content-container hologram-panel contact-panel">
+                    <div class="dashboard-header" style="justify-content: center; flex-direction: column; gap: 1rem;">
+                        <span class="planet-label" style="margin-left:0;">Destination Finale : TERRE</span>
+                        <h2><i class="fas fa-satellite-dish"></i> Établir le Contact</h2>
+                    </div>
+                    <div style="text-align: center; max-width: 600px; margin: 0 auto; padding: 1rem 0;">
+                        <p style="margin-bottom: 2.5rem; color: var(--text-gray); font-size: 1.1rem; line-height: 1.6;">Vous avez atterri à bon port. Vous avez un projet en tête ou vous souhaitez simplement échanger ? Les canaux de communication sont ouverts !</p>
+                        <a href="mailto:contact@kouidri.dev" class="cta-button glow-btn">[ ENVOYER UN MESSAGE ]</a>
+                        
+                        <div class="social-links" style="margin-top: 3rem;">
+                            <a href="#"><i data-lucide="github"></i></a>
+                            <a href="#"><i data-lucide="linkedin"></i></a>
+                            <a href="#"><i data-lucide="twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Extracted Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2024 KOUIDRI.DEV - Tous droits réservés.</p>
+                <div class="footer-decoration"></div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Project Details Modal (Holographic UI) -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content hologram-panel" style="border-color: var(--primary); box-shadow: 0 0 40px var(--primary-dim);">
+            <span class="close-modal"><i class="fas fa-times"></i></span>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
