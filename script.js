@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
         const scrollPercent = (scrolled / maxScroll); // 0 to 1
         
-        // Map 0 -> 1 scroll to 0px -> 1000px background position shift
-        // This gives the illusion of planet rotation
-        document.documentElement.style.setProperty('--scroll-rotation', `-${scrollPercent * 1500}px`);
+        // Map 0 -> 1 scroll to 0px -> 800px background position shift
+        // This gives a more subtle and elegant rotation effect
+        document.documentElement.style.setProperty('--scroll-rotation', `-${scrollPercent * 800}px`);
 
         // --- 🚀 ROCKET PROGRESS ---
         const rocket = document.getElementById('scroll-rocket');
