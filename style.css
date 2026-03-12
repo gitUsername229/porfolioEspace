@@ -9,8 +9,7 @@
     --hologram-border: rgba(0, 229, 255, 0.3);
     --mono-font: 'JetBrains Mono', 'Courier New', monospace;
     --transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    
-    /* Scroll Rotation Variable controlled by JS */
+
     --scroll-rotation: 0px; 
 }
 
@@ -32,9 +31,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-   DEEP SPACE PARALLAX BACKGROUND
-   ========================================= */
 #space-bg {
     position: fixed;
     top: 0;
@@ -81,7 +77,6 @@ body {
     filter: blur(40px);
 }
 
-/* Mouse Glow Effect */
 #mouse-glow {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none; z-index: 1000;
@@ -90,9 +85,6 @@ body {
     transition: background 0.1s ease;
 }
 
-/* =========================================
-   HOLOGRAM PANELS
-   ========================================= */
 .hologram-panel {
     background: var(--hologram-bg);
     backdrop-filter: blur(12px);
@@ -106,7 +98,6 @@ body {
     overflow: hidden;
 }
 
-/* Effet de Scintillement (Shimmer) */
 .hologram-panel::before {
     content: '';
     position: absolute;
@@ -147,14 +138,12 @@ body {
     overflow: hidden;
 }
 
-/* Futuristic Scanline */
 .hologram-panel::after, .intro-glass-panel::after {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to bottom, transparent 50%, rgba(0, 229, 255, 0.02) 50%);
     background-size: 100% 4px; pointer-events: none; z-index: -1;
 }
 
-/* Avatar Sci-Fi */
 .hero-avatar { position: relative; width: 150px; height: 150px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;}
 .hero-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: relative; z-index: 2; border: 2px solid var(--primary); }
 .avatar-ring-outer { position: absolute; top: -15px; left: -15px; width: calc(100% + 30px); height: calc(100% + 30px); border-radius: 50%; border: 1px dashed rgba(0, 229, 255, 0.4); animation: spin 20s linear infinite; z-index: 1;}
@@ -185,11 +174,9 @@ body {
 .about-text strong { color: var(--text-white); }
 .about-text h3 { color: var(--primary); font-family: var(--mono-font); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;}
 
-/* Typography */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
 
-/* 🌟 NEON TYPOGRAPHY (HERO) 🌟 */
 .neon-title {
     font-size: clamp(4rem, 10vw, 8rem);
     font-weight: 900;
@@ -238,7 +225,6 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
     border-color: var(--secondary);
 }
 
-/* Navigation */
 nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; transition: var(--transition); }
 nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
@@ -247,7 +233,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .nav-item { color: var(--text-muted); font-weight: 500; font-size: 0.95rem; text-decoration: none; transition: var(--transition); }
 .nav-item:hover { color: var(--text-white); text-shadow: 0 0 10px var(--primary); }
 
-/* Scroll Animations */
 .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1); }
 .scroll-reveal.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -260,10 +245,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .planet { opacity: 0; transform: scale(0.8); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
 .is-visible .planet { opacity: 1; transform: scale(1); }
 
-
-/* =========================================
-   VERTICAL JOURNEY LAYOUT
-   ========================================= */
 #journey-container { position: relative; z-index: 10; }
 
 .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 100px; position: relative; }
@@ -285,19 +266,14 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .pos-center { align-items: center; }
 .content-container { flex: 1; max-width: 700px; }
 
-
-/* =========================================
-   ULTRA REALISTIC CSS PLANETS
-   ========================================= */
 .planet {
     position: relative;
     border-radius: 50%;
-    /* Use equirectangular textures */
+
     background-size: 200% 100%;
-    /* Rotation controlled by JS variable */
+
     background-position: var(--scroll-rotation) center;
-    
-    /* 3D Volume Shading: Deep dark side shadow + light reflection + ambient glow */
+
     box-shadow: 
         inset -40px -20px 60px rgba(0,0,0,0.9), 
         inset 10px 10px 40px rgba(255,255,255,0.4), 
@@ -325,28 +301,25 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
     pointer-events: none;
 }
 
-/* 🪐 1. MARS (Projets) */
 .planet-mars {
     width: 320px; height: 320px;
     background-image: url('https://www.solarsystemscope.com/textures/download/2k_mars.jpg');
-    background-color: #c1440e; /* Fallback */
+    background-color: #c1440e; 
     box-shadow: 
         inset -40px -20px 60px rgba(0,0,0,0.9), 
         inset 10px 10px 40px rgba(255, 120, 80, 0.4);
 }
 .mars-glow { background: radial-gradient(circle, rgba(193, 68, 14, 0.5), transparent 65%); }
 
-/* 🪐 2. JUPITER (Parcours) */
 .planet-jupiter {
     width: 450px; height: 450px;
     background-image: url('https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg');
     background-color: #d39c7e;
-    /* Jupiter rotates faster */
+
     background-position: calc(var(--scroll-rotation) * 1.5) center;
 }
 .jupiter-glow { background: radial-gradient(circle, rgba(211, 156, 126, 0.4), transparent 65%); }
 
-/* 🪐 3. SATURNE (Hard Skills) */
 .planet-saturn {
     width: 330px; height: 330px;
     background-image: url('https://www.solarsystemscope.com/textures/download/2k_saturn.jpg');
@@ -366,7 +339,7 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
     background-repeat: no-repeat;
     z-index: 10;
     pointer-events: none;
-    /* Adding drop shadow to the rings gives them depth over the planet */
+
     filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.6));
     animation: ringsFloat 16s ease-in-out infinite;
 }
@@ -376,7 +349,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
     50% { transform: translate(-50%, -50%) rotateX(70deg) rotateY(-12deg); }
 }
 
-/* 🪐 4. NEPTUNE (Soft Skills) */
 .planet-neptune {
     width: 340px; height: 340px;
     background-image: url('https://www.solarsystemscope.com/textures/download/2k_neptune.jpg');
@@ -387,13 +359,12 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 }
 .neptune-glow { background: radial-gradient(circle, rgba(39, 70, 135, 0.6), transparent 65%); }
 
-/* 🌎 5. TERRE DE NUIT (Contact) */
 .earth-container { perspective: 1000px; display: flex; justify-content: center; width: 100%; margin-bottom: 4rem;}
 .planet-earth {
     width: 600px; height: 600px;
     background-image: url('https://www.solarsystemscope.com/textures/download/2k_earth_nightmap.jpg');
     background-color: #020b14;
-    /* Earth rotation is prominent */
+
     background-position: calc(var(--scroll-rotation) * 2) center;
     box-shadow: 
         inset -80px -40px 100px rgba(0,0,0,0.9), 
@@ -407,10 +378,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 }
 .earth-glow { background: radial-gradient(circle, rgba(0, 150, 255, 0.5), transparent 60%); }
 
-
-/* =========================================
-   HOLOGRAM CONTENT (Inner elements)
-   ========================================= */
 .planet-label {
     font-family: var(--mono-font); font-size: 0.8rem; letter-spacing: 3px;
     color: var(--text-muted); text-transform: uppercase;
@@ -426,11 +393,10 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .about-text strong { color: var(--text-white); }
 .about-text h3 { color: var(--primary); font-family: var(--mono-font); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;}
 
-/* Projects Carousel */
 .projects-carousel-container { display: flex; flex-direction: column; gap: 1.5rem; }
 .carousel-viewport { overflow: hidden; width: 100%; position: relative; border-radius: 8px; }
 .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
-.project-slide { min-width: 100%; padding: 0.5rem; } /* Padded to see inner panel shadows */
+.project-slide { min-width: 100%; padding: 0.5rem; } 
 .project-card { display: flex; flex-direction: column; height: 100%; }
 .project-img { width: 100%; height: 200px; border-radius: 6px; overflow: hidden; margin-bottom: 1rem; }
 .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
@@ -449,7 +415,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); transition: 0.3s; }
 .dot.active { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
 
-/* Experience */
 .parcours-column.inner-panel {
     display: flex;
     flex-direction: column;
@@ -465,7 +430,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .badge { background: rgba(0, 229, 255, 0.1); color: var(--primary); padding: 0.2rem 0.5rem; border: 1px solid var(--primary); border-radius: 4px; font-size: 0.7rem; font-family: var(--mono-font); margin-right: 0.5rem; }
 .highlight { color: var(--text-white); font-weight: 700; }
 
-/* Skills */
 .skills-container { display: flex; flex-direction: column; gap: 1.5rem; }
 .skill-category h3 { color: var(--text-white); margin-bottom: 1.25rem; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; }
 .skill-category h3 i { color: var(--primary); }
@@ -483,10 +447,9 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
     100% { box-shadow: 0 -3px 10px rgba(0, 229, 255, 0.4), 0 3px 10px rgba(41, 121, 255, 0.1); }
 }
 
-/* Modal */
 .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 3000; justify-content: center; align-items: center; padding: 2rem; }
 .modal.active { display: flex; }
-.modal-content { width: 100%; max-width: 900px; max-height: 90vh; overflow-y: auto; padding: 3rem; position: relative; scrollbar-width: thin; scrollbar-color: var(--primary) transparent; }
+.modal-content { width: 90vw; max-width: 1200px; height: 90vh; max-height: 90vh; overflow-y: auto; padding: 4rem; position: relative; scrollbar-width: thin; scrollbar-color: var(--primary) transparent; }
 .modal-content::-webkit-scrollbar { width: 6px; }
 .modal-content::-webkit-scrollbar-track { background: transparent; }
 .modal-content::-webkit-scrollbar-thumb { background-color: var(--primary); border-radius: 10px; }
@@ -499,7 +462,55 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .modal-objectif-section h4 { color: var(--primary); font-family: var(--mono-font); font-size: 0.85rem; margin-bottom: 0.5rem; }
 .objectif-text { font-size: 1.05rem; font-weight: bold; color: var(--text-white); }
 .modal-img-container { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid var(--hologram-border); margin-bottom: 1.5rem; }
-.modal-img { width: 100%; display: block; }
+.modal-img { width: 100%; display: block; cursor: zoom-in; transition: transform 0.3s }
+.modal-img:hover { transform: scale(1.02); }
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 4000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 229, 255, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox.active .lightbox-img {
+    transform: scale(1);
+}
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: var(--text-white);
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: 0.3s;
+}
+.lightbox-close:hover {
+    color: var(--primary);
+    transform: rotate(90deg);
+}
 .modal-text { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
 .modal-side h4 { color: var(--primary); font-family: var(--mono-font); font-size: 0.9rem; margin-bottom: 1.5rem; letter-spacing: 1px; }
 .tech-icons { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 2.5rem; }
@@ -509,7 +520,6 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
 .modal-features-list li { display: flex; gap: 0.75rem; align-items: start; }
 .modal-features-list li i { color: var(--primary); margin-top: 0.2rem; }
 
-/* Rocket Scroll Progress Indicator */
 #scroll-progress-track {
     position: fixed;
     right: 30px;
@@ -528,13 +538,12 @@ nav.scrolled { padding: 1rem 0; background: rgba(2, 4, 10, 0.8); backdrop-filter
     top: 0;
     color: var(--primary);
     filter: drop-shadow(0 0 10px var(--primary));
-    transform: translateY(-50%) rotate(180deg); /* point downwards */
+    transform: translateY(-50%) rotate(180deg); 
     width: 24px;
     height: 24px;
     transition: top 0.1s ease-out;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 900px) {
     #scroll-progress-track { display: none; }
     .section-inner { flex-direction: column !important; text-align: center; }

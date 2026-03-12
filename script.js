@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lucide icons
+
     lucide.createIcons();
 
-    // =========================================
-    // 1. MOUSE GLOW & NAVBAR LOGIC
-    // =========================================
     const mouseGlow = document.getElementById('mouse-glow');
     window.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) * 100;
@@ -22,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -35,9 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =========================================
-    // 2. PARALLAX BACKGROUND ENGINE
-    // =========================================
     const layer1 = document.querySelector('.layer-1');
     const layer2 = document.querySelector('.layer-2');
     const layer3 = document.querySelector('.layer-3');
@@ -46,57 +39,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
-        
-        // Background Parallax
+
         if (layer1) layer1.style.transform = `translateY(${scrolled * -0.15}px)`; 
         if (layer2) layer2.style.transform = `translateY(${scrolled * -0.3}px)`; 
         if (layer3) layer3.style.transform = `translateY(${scrolled * -0.6}px)`; 
-        
-        // Hero Fade
+
         if (heroContent) {
             const opacity = 1 - (scrolled / 500);
             heroContent.style.opacity = Math.max(0, opacity);
             heroContent.style.transform = `translateY(${scrolled * 0.4}px)`;
-            
-            // Neon title slight parallax if present
+
             const neonTitle = document.querySelector('.neon-title');
             if(neonTitle) neonTitle.style.transform = `translateY(${scrolled * 0.2}px)`;
         }
-        
+
         if (scrollIndicator) {
             if (scrolled > 100) scrollIndicator.style.opacity = '0';
             else scrollIndicator.style.opacity = '1';
         }
-        
-        // --- 🌍 PLANET ROTATION LOGIC ---
-        // Calculate scroll percentage relative to the whole document
+
         const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
-        const scrollPercent = (scrolled / maxScroll); // 0 to 1
-        
-        // Map 0 -> 1 scroll to 0px -> 800px background position shift
-        // This gives a more subtle and elegant rotation effect
+        const scrollPercent = (scrolled / maxScroll); 
+
         document.documentElement.style.setProperty('--scroll-rotation', `-${scrollPercent * 800}px`);
 
-        // --- 🚀 ROCKET PROGRESS ---
         const rocket = document.getElementById('scroll-rocket');
         if (rocket) {
-            // Cap to 100% max
+
             const p = Math.min(Math.max(scrollPercent, 0), 1);
             rocket.style.top = `${p * 100}%`;
         }
     });
 
-    // =========================================
-    // 4. PROJECT & PARCOURS CAROUSELS LOGIC
-    // =========================================
     const carousels = document.querySelectorAll('.projects-carousel-container');
-    
+
     carousels.forEach(carousel => {
         const track = carousel.querySelector('.carousel-track');
         const prevBtn = carousel.querySelector('.prev-btn');
         const nextBtn = carousel.querySelector('.next-btn');
         const dots = carousel.querySelectorAll('.dot');
-        const slides = carousel.querySelectorAll('.project-slide'); // Could be projects or parcours
+        const slides = carousel.querySelectorAll('.project-slide'); 
         let currentIndex = 0;
         const totalSlides = slides.length;
 
@@ -120,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateCarousel();
             });
-            
+
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     currentIndex = index;
@@ -130,24 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // =========================================
-    // 5. INTERSECTION OBSERVER (Scroll Animations)
-    // =========================================
     const revealElements = document.querySelectorAll('.scroll-reveal');
-    
+
     const revealOptions = {
-        threshold: 0.2, // Trigger when 20% of the element is visible
-        rootMargin: "0px 0px -100px 0px" // Trigger slightly before it hits the bottom
+        threshold: 0.2, 
+        rootMargin: "0px 0px -100px 0px" 
     };
 
     const revealObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Optional: Stop observing once revealed if you don't want it to hide again when scrolling up
-                // observer.unobserve(entry.target); 
+
             } else {
-                // Remove class when scrolling out to allow re-triggering animation (optional based on preference)
+
                 entry.target.classList.remove('is-visible');
             }
         });
@@ -157,45 +135,55 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // Hero and Mars get visible immediately without waiting for scroll
     const hero = document.getElementById('about');
     const mars = document.getElementById('projects');
     if(hero) hero.classList.add('is-visible');
     if(mars) mars.classList.add('is-visible');
 
-
-    // =========================================
-    // 6. PROJECT MODALS LOGIC
-    // =========================================
     const modal = document.getElementById('project-modal');
     const modalContent = document.getElementById('modal-body-content');
     const modalCloseBtn = modal.querySelector('.close-modal');
-    
-    // Exact data preserved from ancien
+
     const projectsData = {
         psup: {
             title: "EnseignantSup",
-            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
-            objectif: "Créer une application permettant d'aider à l'évaluation qualitative des dossiers Parcoursup.",
-            description: "EnseignantSup est un outil d'aide à la sélection des dossiers de candidatures. Il permet d'automatiser le scoring et le classement des dossiers pour faciliter le travail des commissions, tout en offrant une interface claire pour la gestion administrative.",
+            images: ["step1Parcoursup.png", "step2Parcoursup.png", "pdfParcoursup.png"],
+            team: "4 personnes",
+            objectif: "Automatiser l'analyse et le tri des dossiers Parcoursup.",
+            description: "Outil desktop qui parse en masse les dossiers PDF des lycéens. Il extrait les notes, calcule des moyennes pondérées par matière et génère un classement brut. L'objectif est d'éliminer le triage basique pour laisser les enseignants juger de la pertinence des profils.",
             stack: [{ name: "Electron", icon: "fab fa-js" }, { name: "Node.js", icon: "fab fa-node-js" }, { name: "ONNX", icon: "fas fa-microchip" }, { name: "PDF.js", icon: "far fa-file-pdf" }],
-            features: ["Extraction PDF intelligente", "Scoring qualitatif assisté", "Analyse sémantique", "Interface dédiée au staff"]
+            features: [
+                "Création d'un parseur PDF asynchrone capable de lire 500+ dossiers par minute.", 
+                "Mise en place d'un modèle ONNX local pour analyser les appréciations textuelles. Gain de temps estimé : 60%.", 
+                "Développement de l'interface Electron et intégration de la logique Node.js."
+            ]
         },
         cannes: {
             title: "Festival de Cannes",
-            image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1000&auto=format&fit=crop",
-            objectif: "Assurer la gestion globale et centralisée du Festival de Cannes.",
-            description: "Cette plateforme permet de centraliser toute la gestion du Festival de Cannes. Elle offre des outils complets pour piloter la billetterie, organiser la logistique des invités et sécuriser les accès VIP, le tout intégré dans un écosystème fluide.",
+            images: ["festivalAccueil.png", "festivalPlanning.png", "festivalChatbot.png"],
+            team: "2 personnes",
+            objectif: "Coder la plateforme web de gestion principale du Festival.",
+            description: "Application critique développée sur mesure. Elle centralise les données du festival : plannings des projections, accréditations, tickets et sécurisation des zones VIP.",
             stack: [{ name: "Symfony", icon: "fab fa-symfony" }, { name: "PHP", icon: "fab fa-php" }, { name: "MySQL", icon: "fas fa-database" }, { name: "SCSS", icon: "fab fa-sass" }],
-            features: ["Gestion CRM VIP", "Planning interactif", "Système de billetterie", "Administration staff"]
+            features: [
+                "Développement back-end sous Symfony pour gérer les pics de charge (2000+ utilisateurs locaux simultanés).", 
+                "Refonte du schéma de base de données MySQL. Ajout d'index pour lisser les temps de réponse sur les tables lourdes.", 
+                "Création d'un module de billetterie et d'un dashboard admin pour le suivi live.",
+                "Développement d'un chatbot qui parse la BDD pour répondre rapidement aux questions d'emploi du temps."
+            ]
         },
         edt: {
             title: "EDT Manager",
-            image: "https://images.unsplash.com/photo-1506784919141-935967000e30?q=80&w=1000&auto=format&fit=crop",
-            objectif: "Concevoir une application scolaire pour la gestion interactive du temps.",
-            description: "EDT Manager permet de consulter et d'administrer des emplois du temps de manière interactive. L'application facilite la planification des ressources et offre une visibilité claire sur les plannings pour tous les utilisateurs.",
+            images: ["edtPlanning.png", "edtProfil.png"],
+            team: "Projet solo",
+            objectif: "Créer un gestionnaire d'emploi du temps drag-and-drop.",
+            description: "L'application évite d'utiliser un tableur complexe pour gérer les emplois du temps de l'école. Les professeurs s'y connectent pour poser, décaler ou supprimer leurs créneaux de cours facilement.",
             stack: [{ name: "Vue.js", icon: "fab fa-vuejs" }, { name: "TypeScript", icon: "fab fa-js-square" }, { name: "Express", icon: "fas fa-server" }],
-            features: ["Vue 3 réactive", "Architecture API REST", "Auth JWT sécurisée", "Gestion CRUD plannings"]
+            features: [
+                "Développement du front-end en Vue.js avec un focus sur la réutilisation des composants UI.", 
+                "Codage de l'API REST en Node.js/TypeScript. Implémentation de la session via JWT basique.", 
+                "Mise en place de routes CRUD complètes sur la gestion des salles et des enseignants."
+            ]
         }
     };
 
@@ -205,19 +193,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const projectId = btn.getAttribute('data-project');
             const project = projectsData[projectId];
             if(!project) return;
-            
+
             modalContent.innerHTML = `
                 <div class="modal-header">
                     <h2>${project.title}</h2>
                 </div>
                 <div class="modal-body enhanced-layout">
                     <div class="modal-main">
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                            <span class="tag" style="font-size: 0.9rem; padding: 0.4rem 0.8rem;"><i class="fas fa-users" style="margin-right: 5px;"></i> ${project.team}</span>
+                        </div>
                         <div class="modal-objectif-section">
-                            <h4>// OBJECTIF</h4>
+                            <h4>
                             <p class="objectif-text">${project.objectif}</p>
                         </div>
-                        <div class="modal-img-container">
-                            <img src="${project.image}" alt="${project.title}" class="modal-img">
+                        <div class="modal-carousel-wrapper" style="margin-bottom: 1.5rem;">
+                            <div class="modal-img-container" style="margin-bottom: 0.5rem; overflow: hidden; position: relative;">
+                                <div class="modal-carousel-track" style="display: flex; transition: transform 0.4s ease; width: 100%;">
+                                    ${project.images.map(img => `<img src="${img}" alt="${project.title}" class="modal-img" style="min-width: 100%; height: auto; object-fit: cover;">`).join('')}
+                                </div>
+                            </div>
+                            ${project.images.length > 1 ? `
+                            <div class="carousel-controls">
+                                <button class="carousel-arrow modal-prev-btn"><i class="fas fa-chevron-left"></i></button>
+                                <div class="carousel-dots modal-dots">
+                                    ${project.images.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}"></span>`).join('')}
+                                </div>
+                                <button class="carousel-arrow modal-next-btn"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            ` : ''}
                         </div>
                         <div class="modal-text">
                             <p>${project.description}</p>
@@ -225,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="modal-side">
                         <div class="modal-tech-bar">
-                            <h4>// TECHNOLOGIES</h4>
+                            <h4>
                             <div class="tech-icons">
                                 ${project.stack.map(s => `
                                     <div class="tech-icon-item" title="${s.name}">
@@ -236,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>
                         <div class="modal-features-list">
-                            <h4>// MISSIONS</h4>
+                            <h4>
                             <ul>
                                 ${project.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}
                             </ul>
@@ -244,20 +248,112 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
+
+            const modalTrack = modalContent.querySelector('.modal-carousel-track');
+            const modalPrevBtn = modalContent.querySelector('.modal-prev-btn');
+            const modalNextBtn = modalContent.querySelector('.modal-next-btn');
+            const modalDots = modalContent.querySelectorAll('.modal-dots .dot');
+
+            if (modalTrack && project.images.length > 1) {
+                let currentModalIndex = 0;
+                const totalModalSlides = project.images.length;
+
+                const updateModalCarousel = () => {
+                    modalTrack.style.transform = `translateX(-${currentModalIndex * 100}%)`;
+                    modalDots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentModalIndex);
+                    });
+                };
+
+                if (modalNextBtn) {
+                    modalNextBtn.addEventListener('click', () => {
+                        currentModalIndex = (currentModalIndex + 1) % totalModalSlides;
+                        updateModalCarousel();
+                    });
+                }
+
+                if (modalPrevBtn) {
+                    modalPrevBtn.addEventListener('click', () => {
+                        currentModalIndex = (currentModalIndex - 1 + totalModalSlides) % totalModalSlides;
+                        updateModalCarousel();
+                    });
+                }
+
+                modalDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        currentModalIndex = index;
+                        updateModalCarousel();
+                    });
+                });
+            }
+
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            document.body.style.overflow = 'hidden'; 
         });
     });
+
+    const closeLightbox = () => {
+        const lightbox = document.querySelector('.lightbox');
+        if (lightbox) {
+            lightbox.classList.remove('active');
+
+            if (!modal.classList.contains('active')) {
+                document.body.style.overflow = 'auto';
+            }
+        }
+    }
 
     modalCloseBtn.onclick = () => {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
+        closeLightbox();
     };
-    
+
     modal.onclick = (e) => { 
         if (e.target === modal) {
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
+            closeLightbox();
         }
     };
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <button class="lightbox-close" aria-label="Fermer la vue plein écran"><i class="fas fa-times"></i></button>
+        <img class="lightbox-img" src="" alt="Image plein écran">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    const setupLightboxTriggers = () => {
+        const modalImages = document.querySelectorAll('.modal-img');
+        modalImages.forEach(img => {
+            img.style.cursor = 'zoom-in'; 
+
+            const newImg = img.cloneNode(true);
+            img.parentNode.replaceChild(newImg, img);
+
+            newImg.addEventListener('click', () => {
+                lightboxImg.src = newImg.src;
+                lightbox.classList.add('active');
+            });
+        });
+    };
+
+    const viewMoreBtns = document.querySelectorAll('.view-more-btn');
+    viewMoreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+
+            setTimeout(setupLightboxTriggers, 50); 
+        });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
 });

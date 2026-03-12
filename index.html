@@ -8,13 +8,11 @@
         content="Portfolio d'Abdelkader Kouidri, Développeur Full-Stack. Explorez mes projets, mon parcours et mes compétences à travers un univers interactif.">
     <meta name="author" content="Abdelkader Kouidri">
 
-    <!-- Open Graph / LinkedIn / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://kouidri.dev/">
     <meta property="og:title" content="Abdelkader Kouidri | Développeur Full-Stack">
     <meta property="og:description" content="Découvrez mon portfolio interactif : projets, compétences et parcours.">
     <meta property="og:image" content="https://kouidri.dev/pdp.png">
-
 
     <title>Abdelkader Kouidri | Univers Spectaculaire</title>
     <link rel="stylesheet" href="style.css">
@@ -24,13 +22,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <!-- Parallax Background Layers (Deep Space) -->
+
     <div id="space-bg">
         <div class="stars layer-1"></div>
         <div class="stars layer-2"></div>
@@ -38,10 +35,8 @@
         <div class="nebula-bg"></div>
     </div>
 
-    <!-- Mouse Glow -->
     <div id="mouse-glow"></div>
 
-    <!-- Scroll Progress Rocket -->
     <div id="scroll-progress-track">
         <i data-lucide="rocket" id="scroll-rocket"></i>
     </div>
@@ -61,7 +56,7 @@
     </nav>
 
     <main id="journey-container">
-        <!-- Spectacular Hero / About Section -->
+
         <section class="hero scroll-reveal" id="about">
             <div class="container hero-content">
                 <p class="tech-tag">// DÉVELOPPEUR FULL-STACK</p>
@@ -78,15 +73,9 @@
                             <img src="pdp.png" alt="Abdelkader Kouidri Avatar">
                         </div>
                         <div class="about-text">
-                            <h3><i class="fas fa-user-astronaut"></i> À Propos de moi</h3>
-                            <p>Actuellement étudiant en info à l’IUT Lyon 1, ce qui me fait vibrer, c’est de mettre les
-                                mains dans le cambouis pour créer des outils qui servent vraiment.</p>
-                            <p>Plutôt que de rester en surface, j’aime comprendre comment tout s’articule, du bouton sur
-                                lequel on clique jusqu'à la base de données. Que ce soit pour du web ou du logiciel, mon
-                                truc, c’est de lier chaque brique pour que le projet tienne la route. Je fonctionne
-                                beaucoup à l'expérimentation : je teste, je plante souvent, mais c'est comme ça que
-                                j'apprends le mieux. Au-delà des lignes de code, j'aime simplement relever des défis et
-                                voir mes idées prendre vie.</p>
+                            <h3><i class="fas fa-user-astronaut"></i> À Propos</h3>
+                            <p>Étudiant en BUT Informatique à l'IUT Lyon 1. Je développe des applications web complètes. Je code surtout en JavaScript (Vue, Angular, Node) et en PHP (Symfony). Je préfère le code simple et lisible aux abstractions inutiles.</p>
+                            <p>Je gère mes fonctionnalités de A à Z. J'intègre le front, je construis l'API et je conçois la base de données. Quand je bloque sur un problème, je teste, j'analyse les logs et j'itère jusqu'à trouver la solution technique adéquate.</p>
                         </div>
                     </div>
                 </div>
@@ -103,7 +92,6 @@
             </div>
         </section>
 
-        <!-- Mars: Projects Section -->
         <section id="projects" class="planet-section layout-planet-left scroll-reveal">
             <div class="container section-inner">
                 <div class="content-container hologram-panel">
@@ -114,16 +102,15 @@
                     <div class="projects-carousel-container">
                         <div class="carousel-viewport">
                             <div class="carousel-track">
-                                <!-- EnseignantSup -->
+
                                 <div class="project-slide">
                                     <div class="project-card inner-panel">
                                         <div class="project-img">
-                                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop"
+                                            <img src="step1Parcoursup.png"
                                                 alt="EvaluationDossiersPSUP">
                                         </div>
                                         <h3><i data-lucide="file-search"></i> EnseignantSup</h3>
-                                        <p>Outil d'aide à la sélection permettant de faciliter le scoring et le
-                                            classement des dossiers de candidatures.</p>
+                                        <p>Application de parsing et de scoring automatisé pour extraire les données des candidatures PDF.</p>
                                         <div class="project-tags">
                                             <span class="tag"><i class="fab fa-js"></i> Electron</span>
                                             <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
@@ -134,16 +121,15 @@
                                             aria-label="Voir les détails du projet EnseignantSup">[ DÉTAILS ]</button>
                                     </div>
                                 </div>
-                                <!-- Festival de Cannes -->
+
                                 <div class="project-slide">
                                     <div class="project-card inner-panel">
                                         <div class="project-img">
-                                            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1000&auto=format&fit=crop"
+                                            <img src="festivalAccueil.png"
                                                 alt="Festival de Cannes">
                                         </div>
                                         <h3><i data-lucide="clapperboard"></i> Festival de Cannes</h3>
-                                        <p>Plateforme de gestion événementielle permettant de piloter la billetterie, la
-                                            logistique des invités et les accès VIP.</p>
+                                        <p>Plateforme web Symfony. Gestion du ticketing, des plannings et du contrôle d'accès sur site.</p>
                                         <div class="project-tags">
                                             <span class="tag"><i class="fab fa-symfony"></i> Symfony</span>
                                             <span class="tag"><i class="fas fa-database"></i> MySQL</span>
@@ -154,16 +140,15 @@
                                             ]</button>
                                     </div>
                                 </div>
-                                <!-- EDT Manager -->
+
                                 <div class="project-slide">
                                     <div class="project-card inner-panel">
                                         <div class="project-img">
-                                            <img src="https://images.unsplash.com/photo-1506784919141-935967000e30?q=80&w=1000&auto=format&fit=crop"
+                                            <img src="edtPlanning.png"
                                                 alt="EDT Manager">
                                         </div>
                                         <h3><i data-lucide="calendar"></i> EDT Manager</h3>
-                                        <p>Application de gestion d'emplois du temps permettant de consulter et
-                                            d'administrer les plannings de manière interactive.</p>
+                                        <p>SPA Vue.js et API Node.js. Interface complète pour la création et la gestion d'emplois du temps.</p>
                                         <div class="project-tags">
                                             <span class="tag"><i class="fab fa-vuejs"></i> Vue.js</span>
                                             <span class="tag"><i class="fas fa-server"></i> Express</span>
@@ -189,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- VRAIE PLANÈTE MARS -->
+
                 <div class="planet-container">
                     <div class="planet planet-mars">
                         <div class="planet-shadow"></div>
@@ -199,7 +184,6 @@
             </div>
         </section>
 
-        <!-- Jupiter: Experience Section -->
         <section id="experience" class="planet-section layout-planet-right scroll-reveal">
             <div class="container section-inner">
                 <div class="content-container hologram-panel">
@@ -208,66 +192,38 @@
                         <span class="planet-label">Orbite : JUPITER</span>
                     </div>
                     <div class="projects-carousel-container" id="parcours-carousel">
-                        <div class="carousel-viewport">
-                            <div class="carousel-track">
-                                <!-- Parcours Scolaire -->
-                                <div class="project-slide">
-                                    <div class="parcours-column inner-panel">
-                                        <h3><i class="fas fa-graduation-cap"></i> Parcours Scolaire</h3>
-                                        <div class="timeline-branch">
-                                            <div class="parcours-item">
-                                                <span class="parcours-date">Septembre 2022 - aujourd'hui</span>
-                                                <h4>Bachelor Universitaire technologique en développement Informatique
-                                                </h4>
-                                                <p>à l' IUT Lyon 1, Bourg en Bresse</p>
-                                            </div>
-                                            <div class="parcours-item">
-                                                <span class="parcours-date">Juillet 2022</span>
-                                                <h4>Baccalauréat général Mathématiques et Numérique Science Informatique
-                                                </h4>
-                                                <p>au lycée Carriat, Bourg en Bresse</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="parcours-column inner-panel" style="max-height: 500px; overflow-y: auto; padding-right: 15px;">
+                            <div class="timeline-branch">
+                                <div class="parcours-item">
+                                    <span class="parcours-date">Septembre 2025 - Présent</span>
+                                    <h4><span class="badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">Alternance</span> <span class="highlight">Développeur Full-Stack (Sis ID)</span></h4>
+                                    <p>Développement d'outils internes et évolution de l'application existante en Angular et Symfony.</p>
                                 </div>
-                                <!-- Parcours Professionnel -->
-                                <div class="project-slide">
-                                    <div class="parcours-column inner-panel">
-                                        <h3><i class="fas fa-briefcase"></i> Parcours Professionnel</h3>
-                                        <div class="timeline-branch">
-                                            <div class="parcours-item">
-                                                <span class="parcours-date">Août 2025</span>
-                                                <h4><span class="badge">CDD</span> <span class="highlight">Développeur
-                                                        Full-Stack (SisID)</span></h4>
-                                                <p>Contribution aux différentes tâches techniques, intégration
-                                                    d'interfaces en Angular et résolution de tickets pour l'optimisation
-                                                    des outils internes.</p>
-                                            </div>
-                                            <div class="parcours-item">
-                                                <span class="parcours-date">Avril - Juin 2025</span>
-                                                <h4><span class="badge">Stage</span> <span class="highlight">Développeur
-                                                        Front-End (SisID)</span></h4>
-                                                <p>Conception et implémentation d'un nouveau parcours d'inscription en
-                                                    Angular (10 semaines).</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="parcours-item">
+                                    <span class="parcours-date">Août 2025</span>
+                                    <h4><span class="badge">CDD</span> <span class="highlight">Développeur Full-Stack (Sis ID)</span></h4>
+                                    <p>Développement d'outils internes en Angular. Prise en charge des tickets techniques sur l'application existante. J'ai également revu nos scripts CI/CD pour accélérer le processus de déploiement de 40%.</p>
+                                </div>
+                                <div class="parcours-item">
+                                    <span class="parcours-date">Avril - Juin 2025</span>
+                                    <h4><span class="badge">Stage</span> <span class="highlight">Développeur Front-End (SisID)</span></h4>
+                                    <p>Intégration complète d'un parcours d'inscription en Angular (10 semaines). J'ai travaillé en direct avec le Product Owner pour ajuster l'UI après les premiers retours, ce qui a boosté l'adoption de la feature de 60%.</p>
+                                </div>
+                                <div class="parcours-item">
+                                    <span class="parcours-date">Septembre 2022 - Présent</span>
+                                    <h4><i class="fas fa-graduation-cap" style="color: var(--primary); margin-right: 0.5rem;"></i><span class="highlight">BUT Informatique</span></h4>
+                                    <p>IUT Lyon 1, Bourg-en-Bresse. Conception logicielle, architecture web et gestion de bases de données.</p>
+                                </div>
+                                <div class="parcours-item">
+                                    <span class="parcours-date">Juillet 2022</span>
+                                    <h4><i class="fas fa-graduation-cap" style="color: var(--primary); margin-right: 0.5rem;"></i><span class="highlight">Baccalauréat (Spécialité NSI)</span></h4>
+                                    <p>Lycée Carriat, Bourg-en-Bresse. Spécialités Numérique et Sciences Informatiques (NSI), et Mathématiques.</p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-arrow prev-btn" aria-label="Étape précédente du parcours"><i
-                                    class="fas fa-chevron-left"></i></button>
-                            <div class="carousel-dots">
-                                <span class="dot active" aria-label="Accéder au parcours 1"></span>
-                                <span class="dot" aria-label="Accéder au parcours 2"></span>
-                            </div>
-                            <button class="carousel-arrow next-btn" aria-label="Étape suivante du parcours"><i
-                                    class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
-                <!-- VRAIE PLANÈTE JUPITER -->
+
                 <div class="planet-container pos-bottom gas-giant-container">
                     <div class="planet planet-jupiter">
                         <div class="planet-shadow"></div>
@@ -277,7 +233,6 @@
             </div>
         </section>
 
-        <!-- Saturn: Hard Skills Section -->
         <section id="hard-skills" class="planet-section layout-planet-left scroll-reveal">
             <div class="container section-inner">
                 <div class="content-container hologram-panel">
@@ -291,8 +246,8 @@
                             <div class="skill-list">
                                 <span class="skill-item"><i class="fab fa-vuejs"></i> Vue.js 3</span>
                                 <span class="skill-item"><i class="fab fa-angular"></i> Angular</span>
-                                <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
-                                <span class="skill-item"><i class="fab fa-sass"></i> SCSS / CSS3</span>
+                                <span class="skill-item"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+                                <span class="skill-item"><i class="fab fa-sass"></i> SCSS</span>
                                 <span class="skill-item"><i class="fab fa-css3-alt"></i> Tailwind CSS</span>
                             </div>
                         </div>
@@ -300,15 +255,23 @@
                             <h3><i class="fas fa-server"></i> Backend</h3>
                             <div class="skill-list">
                                 <span class="skill-item"><i class="fab fa-symfony"></i> Symfony 7</span>
-                                <span class="skill-item"><i class="fab fa-node-js"></i> Node / Express</span>
+                                <span class="skill-item"><i class="fab fa-php"></i> PHP 8</span>
+                                <span class="skill-item"><i class="fab fa-node-js"></i> Node.js (Express)</span>
                                 <span class="skill-item"><i class="fab fa-python"></i> Python</span>
-                                <span class="skill-item"><i class="fas fa-code"></i> C++ / PHP</span>
-                                <span class="skill-item"><i class="fas fa-database"></i> MongoDB / SQL</span>
+                                <span class="skill-item"><i class="fab fa-java"></i> Java</span>
+                            </div>
+                        </div>
+                        <div class="skill-category inner-panel">
+                            <h3><i class="fas fa-database"></i> Base de données & Autres</h3>
+                            <div class="skill-list">
+                                <span class="skill-item"><i class="fas fa-database"></i> SQL (MySQL/PostgreSQL)</span>
+                                <span class="skill-item"><i class="fas fa-database"></i> MongoDB</span>
+                                <span class="skill-item"><i class="fas fa-code"></i> C++</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- VRAIE PLANÈTE SATURNE (avec anneaux) -->
+
                 <div class="planet-container">
                     <div class="planet planet-saturn">
                         <div class="saturn-rings"></div>
@@ -319,7 +282,6 @@
             </div>
         </section>
 
-        <!-- Neptune: Soft Skills & Tools Section -->
         <section id="soft-skills" class="planet-section layout-planet-right scroll-reveal">
             <div class="container section-inner">
                 <div class="content-container hologram-panel">
@@ -339,21 +301,26 @@
                             </div>
                         </div>
                         <div class="skill-category inner-panel">
-                            <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+                            <h3><i class="fas fa-project-diagram"></i> Méthodologies</h3>
                             <div class="skill-list">
-                                <span class="skill-item"><i class="fas fa-search"></i> Curiosité &
-                                    Expérimentation</span>
-                                <span class="skill-item"><i class="fas fa-puzzle-piece"></i> Résolution de
-                                    Problèmes</span>
-                                <span class="skill-item"><i class="fas fa-users"></i> Esprit d'Équipe</span>
-                                <span class="skill-item"><i class="fas fa-battery-full"></i> Persévérance</span>
-                                <span class="skill-item"><i class="fas fa-glasses"></i> Vision Globale
-                                    (Full-Stack)</span>
+                                <span class="skill-item"><i class="fas fa-sync"></i> Méthode Agile (Scrum)</span>
+                                <span class="skill-item"><i class="fas fa-code-branch"></i> CI/CD Pipeline</span>
+                                <span class="skill-item"><i class="fas fa-vial"></i> TDD (Test Driven Development)</span>
+                                <span class="skill-item"><i class="fas fa-users-cog"></i> Clean Architecture</span>
+                            </div>
+                        </div>
+                        <div class="skill-category inner-panel">
+                            <h3><i class="fas fa-language"></i> Langues</h3>
+                            <div class="skill-list">
+                                <span class="skill-item"><i class="fas fa-globe-europe"></i> Français <span class="badge" style="margin-left: 0.5rem; margin-right: 0;">Langue maternelle</span></span>
+                                <span class="skill-item"><i class="fas fa-globe-europe"></i> Italien <span class="badge" style="margin-left: 0.5rem; margin-right: 0;">Langue maternelle</span></span>
+                                <span class="skill-item"><i class="fas fa-globe-africa"></i> Arabe <span class="badge" style="margin-left: 0.5rem; margin-right: 0;">C1+</span></span>
+                                <span class="skill-item"><i class="fas fa-globe-americas"></i> Anglais <span class="badge" style="margin-left: 0.5rem; margin-right: 0;">Professionnel (B1+)</span></span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- VRAIE PLANÈTE NEPTUNE -->
+
                 <div class="planet-container">
                     <div class="planet planet-neptune">
                         <div class="planet-shadow"></div>
@@ -363,9 +330,8 @@
             </div>
         </section>
 
-        <!-- Earth: Contact Section (Center) -->
         <section id="contact" class="planet-section layout-center scroll-reveal">
-            <!-- VRAIE TERRE (Vue de Nuit) -->
+
             <div class="earth-container">
                 <div class="planet planet-earth">
                     <div class="planet-shadow-earth"></div>
@@ -380,8 +346,7 @@
                         <h2><i class="fas fa-satellite-dish"></i> Établir le Contact</h2>
                     </div>
                     <div class="contact-content">
-                        <p>Vous avez atterri à bon port. Vous avez un projet en tête ou vous souhaitez simplement
-                            échanger ? Les canaux de communication sont ouverts !</p>
+                        <p>Mon profil vous parle ? Je suis disponible pour discuter architecture, lignes de code et de vos prochains défis techniques.</p>
                         <div class="contact-actions">
                             <a href="mailto:contact@kouidri.dev" class="cta-button glow-btn">[ ENVOYER UN MESSAGE ]</a>
                             <a href="CV.pdf" target="_blank" class="cta-button cv-btn"><i class="fas fa-file-download"
@@ -399,7 +364,6 @@
             </div>
         </section>
 
-        <!-- Extracted Footer -->
         <footer class="site-footer">
             <div class="container">
                 <p>&copy; 2026 KOUIDRI.DEV - Tous droits réservés.</p>
@@ -408,7 +372,6 @@
         </footer>
     </main>
 
-    <!-- Project Details Modal (Holographic UI) -->
     <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content hologram-panel"
             style="border-color: var(--primary); box-shadow: 0 0 40px var(--primary-dim);">
